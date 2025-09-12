@@ -1,0 +1,32 @@
+[package]
+name = "todo-axum"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# 异步运行时
+tokio = { version = "1.39", features = ["rt-multi-thread", "macros"] }
+
+# axum web 框架（router、extractors、json...）
+axum = { version = "0.8.4" }
+
+# sqlx：异步 DB 客户端，启用 mysql + runtime-tokio-rustls
+sqlx = { version = "0.7", features = ["mysql", "runtime-tokio-rustls", "macros", "chrono"] }
+
+# 用于环境变量（开发时）
+dotenvy = "0.15"
+
+# 日志/tracing（开发调试）
+tracing = "0.1.41"
+tracing-subscriber = "0.3"
+
+# JSON 序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# uuid 用于生成 id （可选）
+uuid = { version = "1.3", features = ["v4"] }
+
+# 时间处理（可选，用 chrono）
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0.99"
