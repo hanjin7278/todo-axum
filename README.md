@@ -1,3 +1,6 @@
+# 基于Axum + SQLX 的待办事项工具
+## 创建数据库
+```
 create database simple_todo;
 CREATE TABLE todos (
                        id VARCHAR(36) PRIMARY KEY,         -- 使用 uuid 字符串作为主键
@@ -7,3 +10,9 @@ CREATE TABLE todos (
                        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+```
+
+## 构建执行
+```
+    cargo run
+```
