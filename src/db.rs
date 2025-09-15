@@ -93,7 +93,7 @@ impl DataBase {
             title: input.title,
             description: input.description.unwrap_or_default(),
             completed: false,
-            created_at: now,  // API 用 UTC
+            created_at: now,
             updated_at: now,
         })
     }
